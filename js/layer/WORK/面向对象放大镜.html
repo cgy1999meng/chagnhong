@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象放大镜</title>
+</head>
+<style>
+    .small{
+        width: 250px;
+        height: 350px;
+        border: 1px solid black;
+        position: absolute;
+        top: 50px;
+        left: 100px;
+    }
+    .small img{
+        width: 100%;
+        height: 100%;
+    }
+    .small .marsk{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+    }
+    .max{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 400px;
+        top: 50px;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+    .max img{
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+
+</style>
+<body>
+    <div class="small">
+        <div class="marsk"></div>
+        <img src="./images/1.jpg" alt="">
+    </div>
+    <div class="max">
+        <img src="./images/1.jpg" alt="">
+    </div>
+</body>
+<script>
+    //面向对象写放大镜
+    function Fdj(){//传入大小两个盒子元素的类名
+        this.small = document.querySelector('.small');
+        this.marsk = document.querySelector('.marsk');//蒙版必须以marsk命名
+        this.smallimg = document.querySelector('.small img');
+        this.max = document.querySelector('.max');
+        this.maximg = document.querySelector('.max img');
+       
+        var _this = this;
+        this.small.onmouseenter = function(){
+            _this.changeClass(_this.marsk,'block');
+            _this.changeClass(_this.max,'block');
+        }
+        this.small.onmouseleave = function(){
+            _this.changeClass(_this.marsk,'none');
+            _this.changeClass(_this.max,'none');
+        }
+        this.small.onmousemove = function(ev){
+            var e = ev||window.event;
+           
+            var left = e.clientX - _this.small.offsetLeft - 50;
+            var top = e.clientY - _this.small.offsetTop - 50;
+
+            if(left <= 0){
+                left = 0;
+            }
+            if(left >= 150){
+                left = 150
+            }
+            if(top <= 0){
+                top = 0
+            }
+            if(top >= 250){
+                top = 250
+            }
+            _this.marsk.style.left = left + 'px';
+            _this.marsk.style.top = top +'px';
+            //右边图片反向移动相应倍数
+            _this.maximg.style.left =left * -2 +'px';
+            _this.maximg.style.top = top *-2+'px'
+            }
+    }
+    //显示隐藏函数
+    Fdj.prototype.changeClass = function(node,value){
+        node.style.display = value;
+    }
+    //移动蒙版
+    // Fdj.prototype.markMove = function(ev){
+    //     var e = ev||window.event;
+    //     var l = e.clientX - this.left;
+    //     var t = e.clientY - this.top;
+    //     if(l < 0){
+    //         l=0;
+    //     }
+    //     if(l >= this.small.clientWidth - this.marsk.clientWidth){
+    //         l = this.small.clientWidth - this.marsk.clientWidth
+    //     }
+    //     if(t<0){
+    //         t=0
+    //     }
+    //     if(t > this.small.clientHeight - this.marsk.clientHeight){
+    //         t = this.small.clientHeight - this.marsk.clientHeight
+    //     }
+    //     this.marsk.style.left = l + 'px';
+    //     this.marsk.style.top = t +'px';
+
+    // }
+    var fdj1 = new Fdj();
+</script>
+</html>

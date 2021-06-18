@@ -1,0 +1,86 @@
+.container{
+    width: 1230px;
+    margin: 0 auto;
+}
+#head{
+    min-width: 1230px;
+    height: 80px;
+    background: white;
+    position: relative;
+}
+.logo{
+   float: left; 
+}
+.logo a {
+    display: block;
+    width: 240px;
+    height: 80px;
+    text-indent: -9999px;
+    background:url('../images/login.png') no-repeat center;
+}
+.wrap{
+    width: 600px;
+    height: 400px;
+    margin: 60px auto;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+.head{
+    width: 99.9%;
+    height: 80px;
+    background: #eeeeee;
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px 10px 0 0;
+}
+#body{
+    height: 100%;
+    min-width: 1230px;
+    background-color: #eeeeee;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.wrap input{
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #cccccc;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.tip{
+    height: 30px;
+    width: 150px;
+    margin-left: 50px;
+    line-height: 30px;
+    font-size: 12px;
+    margin-top: 15px;
+}
+.btn{
+    width: 500px;
+    height: 50px;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+    line-height: 50px;
+    font-size: 18px;
+    margin: 10px auto;
+}
+.goback{
+    /* text-decoration: none; */
+    float: right;
+    margin-right: 56px;
+    display: none;
+    
+}
+
+
+

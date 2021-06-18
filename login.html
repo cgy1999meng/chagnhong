@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+</head>
+<link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/clear.css">
+
+<script src="./js/jquery-1.10.1.min.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/cookie.js"></script>
+<script src="./js/validate/jquery.validate.min.js"></script>
+<script src="./js/validate/localization/messages_zh.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<body>
+    <div id="head">
+        <div class="container clear">
+            <div class="logo">
+                <h1>
+                    <a href="#">长虹</a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+        <form class="loginForm">
+            <div class="container">
+                <div class="wrap">
+                    <div class="head">账号密码登录</div>
+                    <input type="text" class="login username" name="username" placeholder="手机/邮箱/用户名"><br>
+                    <input type="text" name="password" class="password" placeholder="密码"><br>
+                    <input type="checkbox" name="remember" style="width: 13px;height: 13px;"> 记住用户名
+                    <br>
+                    <button type="submit" class="btn submit">登录</button>
+                    <a href="register.html" class="register">注册 | 忘记密码</a>
+                </div>
+            </div> 
+        </form>
+        
+    </div>
+
+
+<script src="./js/login.js"></script>
+
+</body>
+</html>
